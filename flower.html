@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      .flex-container {
+        display: flex;
+        flex-direction: row;
+        background-color: beige;
+      }
+
+      .flex-container > div {
+        background-color: #f1f1f1;
+        margin: 10px;
+        padding: 20px;
+        font-size: 20px;
+      }
+      .flex-container {
+        display: flex;
+        flex-direction: row;
+        background-color: beige;
+      }
+
+      /* Each row of six images */
+      .row {
+        display: flex;
+        flex-direction: row;
+        background-color: beige;
+        gap: 5px;
+      }
+
+      .row > div {
+        margin: 5px;
+      }
+
+      .row img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+      }
+      .row img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+      }
+      /* Responsive layout */
+      @media (max-width: 600px) {
+        .flex-container {
+          flex-direction: column;
+          background-color: grey;
+        }
+      }
+    </style>
+    <title>Find flowers</title>
+  </head>
+  <body>
+    <h1>Wiam finds avians</h1>
+
+    <p class="flex-container">
+      Click on the locations to find the flowers, watch out for the poison ivy
+    </p>
+
+    <div class="flex-container">
+      <div><p id="locations">Number of locations checked is zero.</p></div>
+
+      <div>
+        <p id="score">Score is zero.</p>
+      </div>
+
+      <div>
+        <p>Click for help.</p>
+        <p id="help">Help report</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+    </div>
+    <div class="row">
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+    </div>
+    <div class="row">
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+    </div>
+    <div class="row">
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+    </div>
+    <div class="row">
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+    </div>
+    <div class="row">
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+      <div><img src="bush.png" width="80" /></div>
+    </div>
+  </body>
+</html>
