@@ -23,14 +23,14 @@
   <body>
     <h1>Wiam Reflexes</h1>
     <h2>Timeout - Red in 3 seconds</h2>
-    <div id="target">
-      "Your time"
-      <button type="button" class="btn btn-primary" onclick="">Go</button>
-      <button type="button" class="btn btn-primary" onclick="recordTime()">
-        Halt
-      </button>
-    </div>
+    <div id="target">"Your time"</div>
     <div id="counter">"Count"</div>
+    <button type="button" class="btn btn-primary" onclick="beginTime()">
+      Go
+    </button>
+    <button type="button" class="btn btn-primary" onclick="recordTime()">
+      Halt
+    </button>
 
     <button type="button" class="btn btn-primary" onclick="buttonPress2()">
       Click me change the color.
@@ -44,6 +44,27 @@
         haltTime = Date.now();
         console.log(haltTime);
       }
+      function beginTime() {
+        for (let i = 0; i < 6; i++) {
+          setTimeout(
+            function () {
+              document.getElementById("counter").innerHTML = i;
+            },
+            (5 - i) * 1000,
+          );
+        }
+        setTimeout(function () {
+          if (haltTime == undefined) {
+            document.getElementById("target").innerHTML = "Not soon enough";
+          } else {
+            let targetTime = Date.now();
+            let elapsedTime = targetTime - haltTime;
+            document.getElementById("target").innerHTML =
+              "Time was " + elapsedTime;
+          }
+        }, 5000);
+      }
+
       function buttonPress1() {
         setTimeout(function () {
           document.getElementById("target").style.color = "red";
