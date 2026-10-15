@@ -163,12 +163,20 @@
       let score = 0;
       let locationsVisited = 0;
       let lastLocation = 0;
-      let poisonLocation = 19;
-      let roseLocation = 14;
-      let lilyLocation = [3, 25];
-      let daisyLocation = [2, 5, 11, 20, 21];
+      let used = [];
+      function rand() {
+        let n = Math.floor(Math.random() * 36);
+        while (used.includes(n)) {
+          n = Math.floor(Math.random() * 36);
+        }
+        used.push(n);
+        return n;
+      }
+      let poisonLocation = rand();
+      let roseLocation = rand();
+      let lilyLocation = [rand(), rand()];
+      let daisyLocation = [rand(), rand(), rand(), rand(), rand()];
       let gameOver = false;
-
       function check(position) {
         if (gameOver) {
           return;
@@ -198,7 +206,22 @@
         document.getElementById("locations").innerHTML =
           "Number of locations checked is " + locationsVisited + ".";
         lastLocation = position;
+        moveRose();
+        if (roseLocation == position) {
+          gameOver = true;
+        }
         document.getElementById("score").innerHTML = "Score is " + score + ".";
+      }
+      function moveRose() {
+        while (true) {
+          let move = [-6, 6, -1, 1][Math.floor(Math.random() * 4)];
+          let next = roseLocation + move;
+          if (next < 0 || next > 35) continue;
+          if (move == 1 && roseLocation % 6 == 5) continue;
+          if (move == -1 && roseLocation % 6 == 0) continue;
+          roseLocation = next;
+          return;
+        }
       }
       function help() {
         let row = parseInt(lastLocation / 6);

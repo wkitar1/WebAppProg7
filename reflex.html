@@ -45,12 +45,13 @@
         console.log(haltTime);
       }
       function beginTime() {
-        for (let i = 0; i < 6; i++) {
+        let start = Math.floor(Math.random() * 9) + 2;
+        for (let i = 0; i < start; i++) {
           setTimeout(
             function () {
               document.getElementById("counter").innerHTML = i;
             },
-            (5 - i) * 1000,
+            (start - i) * 1000,
           );
         }
         setTimeout(function () {
@@ -62,7 +63,7 @@
             document.getElementById("target").innerHTML =
               "Time was " + elapsedTime;
           }
-        }, 5000);
+        }, start * 1000);
       }
 
       function buttonPress1() {
