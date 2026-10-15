@@ -41,6 +41,8 @@
       the container.
     </p>
     <button onclick="makeNewDiv()">Add end</button>
+    <button onclick="addFront()">Add front</button>
+    <button onclick="removeEveryOther()">Remove</button>
   </body>
   <script>
     function makeNewDiv() {
@@ -54,6 +56,25 @@
       /* add it to the container */
       let container = document.getElementById("target");
       container.appendChild(element);
+    }
+    function removeEveryOther() {
+      let divListItems = document.getElementsByClassName("divlist");
+      let len = divListItems.length;
+      if (len > 0) {
+        for (let i = len - 1; i >= 0; i--) {
+          if (i % 2 == 0) {
+            divListItems[i].remove();
+          }
+        }
+      }
+    }
+    function addFront() {
+      let element = document.createElement("div");
+      let value = document.getElementById("input1").value;
+      element.innerHTML = value;
+      element.className = "divlist";
+      let container = document.getElementById("target");
+      container.insertBefore(element, container.firstChild);
     }
   </script>
 </html>
